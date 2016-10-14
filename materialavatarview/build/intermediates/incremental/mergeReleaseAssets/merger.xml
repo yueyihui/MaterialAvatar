@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/materialavatarview/src/main/assets"/><source path="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/materialavatarview/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/materialavatarview/src/release/assets"/></dataSet></merger>
