@@ -2,60 +2,76 @@
 <items version="2" >
 
     <item
-        jar="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        is-multidex="true"
+        jar="E:\Android_SDK\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
         jumboMode="true"
-        revision="23.0.0"
-        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.0.0_8603d6d88317bebb8ba9b3339c1dbd42c062f8b3/classes.dex" />
-    </item>
-    <item
-        jar="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.0"
-        sha1="f14e811cc332b743838e979d7a27b60d59b3cd2e">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_0aaa868dfb175b45b77e553899ea521544401685/classes.dex" />
-    </item>
-    <item
-        jar="/home/c_yiguoc/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.0.0/2943c74db6d4346ab8c6531adac91fa05c137c40/support-annotations-24.0.0.jar"
-        jumboMode="true"
+        optimize="true"
         revision="23.0.0"
         sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.0.0_cbe3e3b876f1772622384f19d7208a6fea0ffad5/classes.dex" />
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_35909799748286586cd927d0226ed94eab52a251\classes.dex" />
     </item>
     <item
-        jar="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        is-multidex="true"
+        jar="E:\test\MaterialAvatar\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
         jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_af20973bed07b7b1e2de9c6b300c51292d7d5c06\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\test\MaterialAvatar\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="f63b2d972be2871cd901544d0d9e738e42c4fd2f">
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5c2b1f69e38cbe421ebca450b6d9016227a6fd4e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\test\MaterialAvatar\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
         revision="23.0.0"
         sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.0.0_47dea38114d56b6927098d93e793e89df9ab1054/classes.dex" />
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.0.0_e13c1c36d4d6bb902158c6738b1855fdd979a5a1\classes.dex" />
     </item>
     <item
-        jar="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/exploded-aar/com.android.support/design/23.0.0/jars/classes.jar"
+        is-multidex="true"
+        jar="E:\test\MaterialAvatar\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
+        optimize="true"
         revision="23.0.0"
-        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.0.0_711e6861eff0e7dd80c40ea061d84a956e040de9/classes.dex" />
+        sha1="183c965c07e5af7122491175833c193abff9d098">
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3c83eaada2b20f82993c7860db7fadbab09af54d\classes.dex" />
     </item>
     <item
-        jar="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        is-multidex="true"
+        jar="E:\test\MaterialAvatar\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\jars\classes.jar"
         jumboMode="true"
-        revision="23.0.0"
-        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_f8d49597422337ef0e1367b9d8f13ccd6d53fb34/classes.dex" />
-    </item>
-    <item
-        jar="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.0.0/jars/classes.jar"
-        jumboMode="true"
+        optimize="true"
         revision="23.0.0"
         sha1="894922f67adeaaef51f077a29e315da21a3382d3">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-24.0.0_106190d7869aa287d984885aef5e276fbbf35092/classes.dex" />
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.0.0_6cab567eb0560d6b995a8e635662af3df58d912d\classes.dex" />
     </item>
     <item
-        jar="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        is-multidex="true"
+        jar="E:\test\MaterialAvatar\app\build\intermediates\exploded-aar\com.android.support\design\23.0.0\jars\classes.jar"
         jumboMode="true"
+        optimize="true"
         revision="23.0.0"
-        sha1="f75b02657a482bd7aee1351e082b1d49774c949b">
-        <dex dex="/home/c_yiguoc/Desktop/SmapleMaterialAvatarView/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_ac03829e698d62efd743abfa907578592aedd0a7/classes.dex" />
+        sha1="8a5238e4bdcd6568b82db669d41817de670586b8">
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.0.0_7f8a30ddf84eced2b8d76ab687eec185027d1084\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="E:\test\MaterialAvatar\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="E:\test\MaterialAvatar\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_a42829fe5df8710834d746e5c529269c81b378f9\classes.dex" />
     </item>
 
 </items>

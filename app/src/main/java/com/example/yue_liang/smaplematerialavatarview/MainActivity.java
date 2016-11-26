@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                     combineAvatarView0.addChild(a1);
                     combineAvatarView0.addChild(a2);
                     combineAvatarView0.addChild(a3);
-                   // combineAvatarView0.setElevationForEveryAvatar(8.0f);
                     combineAvatarView0.refreshLayout(CombineAvatarView.AVATAR_COUNT_MORE);
                 }
             }

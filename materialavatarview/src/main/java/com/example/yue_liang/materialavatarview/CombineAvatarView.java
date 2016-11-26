@@ -61,8 +61,6 @@ public class CombineAvatarView extends FrameLayout {
     @Mode
     private int mAvatarCount = AVATAR_COUNT_NONE;
 
-    private float mAvatarElevation;
-
     private int mOffset;
 
     private static final float SAM_SUNG_S6_ELEVATION = 8.0f;
@@ -77,13 +75,8 @@ public class CombineAvatarView extends FrameLayout {
         super(context, attrs, defStyleAttr);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.CombineAvatarView);
         mAvatarCount = typedArray.getInt(R.styleable.CombineAvatarView_avatar_count, AVATAR_COUNT_NONE);
-        mAvatarElevation = typedArray.getFloat(R.styleable.CombineAvatarView_avatar_elevation, SAM_SUNG_S6_ELEVATION);
         mOffset = typedArray.getInt(R.styleable.CombineAvatarView_avatar_top_offset, SAM_SUNG_S6_OFFSET);
         typedArray.recycle();
-    }
-
-    public void setElevationForEveryAvatar(float avatarElevation) {
-        mAvatarElevation = avatarElevation;
     }
 
     /**
@@ -153,7 +146,7 @@ public class CombineAvatarView extends FrameLayout {
             }
             AVATAR_CONTAINER.clear();
         }
-        invalidate();
+        safetyRequestLayout();
         return this;
     }
 
@@ -166,7 +159,7 @@ public class CombineAvatarView extends FrameLayout {
     public CombineAvatarView cleanViewAt(int location) {
         View child = AVATAR_CONTAINER.get(location);
         detachViewFromParent(child);
-        invalidate();
+        safetyRequestLayout();
         return this;
     }
 
@@ -182,7 +175,7 @@ public class CombineAvatarView extends FrameLayout {
             removeDetachedView(child, false);
             AVATAR_CONTAINER.remove(child);
         }
-        invalidate();
+        safetyRequestLayout();
         return this;
     }
 
@@ -194,19 +187,17 @@ public class CombineAvatarView extends FrameLayout {
      * no need calls requestLayout, else need.
      */
     public CombineAvatarView recoveryAllView() {
-        Iterator<View> iterator = AVATAR_CONTAINER.iterator();
-        while (iterator.hasNext()) {
-            View child = iterator.next();
+        for (View child : AVATAR_CONTAINER) {
             attachViewToParent(child, AVATAR_CONTAINER.indexOf(child), child.getLayoutParams());
         }
-        invalidate();
+        safetyRequestLayout();
         return this;
     }
 
     public CombineAvatarView recoveryViewAt(int location) {
         View child = AVATAR_CONTAINER.get(location);
         attachViewToParent(child, location, child.getLayoutParams());
-        invalidate();
+        safetyRequestLayout();
         return this;
     }
 
@@ -223,8 +214,9 @@ public class CombineAvatarView extends FrameLayout {
         return this;
     }
 
-    public void add(View view) {
-        addView(view);
+    @Override
+    public void addView(View view) {
+        super.addView(view);
         AVATAR_CONTAINER.add(view);
     }
 
@@ -261,8 +253,10 @@ public class CombineAvatarView extends FrameLayout {
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         Log.d("yueliang","onLayout");
         if (checkChildCount()) {
-            Log.d("yueliang", "Every avatar have elevation is = " + mAvatarElevation);
             switch (mAvatarCount) {
+                case AVATAR_COUNT_NONE:
+                    super.onLayout(changed, left, top, right, bottom);
+                    break;
                 case AVATAR_COUNT_ONE:
                     for (int index = 0; index < 1; index++) {
                         View child = getChildAt(index);
@@ -290,12 +284,6 @@ public class CombineAvatarView extends FrameLayout {
         }
     }
 
-    @Override
-    protected void onFinishInflate() {
-        super.onFinishInflate();
-        Log.d("yueliang","onFinishInflate");
-    }
-
     private boolean checkChildCount() {
         Log.d("yueliang", "mAvatarCount = " + mAvatarCount + " getChildCount() = " + getChildCount());
         return getChildCount() >= mAvatarCount && mAvatarCount != AVATAR_COUNT_NONE;
@@ -308,9 +296,12 @@ public class CombineAvatarView extends FrameLayout {
             LayoutParams[] params = new LayoutParams[3];
             View[] child = new View[3];
             switch (mAvatarCount) {
+                case AVATAR_COUNT_NONE:
+                    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+                    break;
+
                 case AVATAR_COUNT_ONE:
                     child[0] = getChildAt(0);
-                   // child[0].setElevation(mAvatarElevation);
                     measureChild(child[0], widthMeasureSpec, heightMeasureSpec);
                     params[0] = (LayoutParams) child[0].getLayoutParams();
                     params[0].x = getPaddingLeft() + (int) child[0].getElevation();
@@ -319,14 +310,12 @@ public class CombineAvatarView extends FrameLayout {
 
                 case AVATAR_COUNT_TWO:
                     child[0] = getChildAt(0);
-                    //child[0].setElevation(mAvatarElevation);
                     measureChild(child[0], widthMeasureSpec, heightMeasureSpec);
                     params[0] = (LayoutParams) child[0].getLayoutParams();
                     params[0].x = getPaddingLeft() + (int) child[0].getElevation();
                     params[0].y = getPaddingTop() + (int) child[0].getElevation();
 
                     child[1] = getChildAt(1);
-                   // child[1].setElevation(mAvatarElevation);
                     measureChild(child[1], widthMeasureSpec, heightMeasureSpec);
                     params[1] = (LayoutParams) child[1].getLayoutParams();
                     params[1].x = child[0].getMeasuredWidth() - getPaddingRight() - (int) child[1].getElevation();
@@ -335,21 +324,18 @@ public class CombineAvatarView extends FrameLayout {
 
                 case AVATAR_COUNT_MORE:
                     child[0] = getChildAt(0);
-                    //child[0].setElevation(mAvatarElevation);
                     measureChild(child[0], widthMeasureSpec, heightMeasureSpec);
                     params[0] = (LayoutParams) child[0].getLayoutParams();
                     params[0].x = MeasureSpec.getSize(widthMeasureSpec) / 2 - child[0].getMeasuredWidth() / 2 + getPaddingLeft();
                     params[0].y = getPaddingTop() + (int) child[0].getElevation() + mOffset;
 
                     child[1] = getChildAt(1);
-                    //child[1].setElevation(mAvatarElevation);
                     measureChild(child[1], widthMeasureSpec, heightMeasureSpec);
                     params[1] = (LayoutParams) child[1].getLayoutParams();
                     params[1].x = MeasureSpec.getSize(widthMeasureSpec) - child[1].getMeasuredWidth() - getPaddingRight() - (int) child[0].getElevation();
                     params[1].y = MeasureSpec.getSize(heightMeasureSpec) - child[1].getMeasuredHeight() - getPaddingBottom() - (int) child[1].getElevation();
 
                     child[2] = getChildAt(2);
-                    //child[2].setElevation(mAvatarElevation);
                     measureChild(child[2], widthMeasureSpec, heightMeasureSpec);
                     params[2] = (LayoutParams) child[2].getLayoutParams();
                     params[2].x = getPaddingLeft() + (int) child[2].getElevation();
@@ -369,18 +355,18 @@ public class CombineAvatarView extends FrameLayout {
 
     @Override
     protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams params) {
-        return new LayoutParams(params);
+        return new CombineAvatarView.LayoutParams(params);
     }
 
     public static class LayoutParams extends FrameLayout.LayoutParams {
         int x;
         int y;
 
-        public LayoutParams(ViewGroup.LayoutParams source) {
+        LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
         }
 
-        public LayoutParams(int width, int height) {
+        LayoutParams(int width, int height) {
             super(width, height);
         }
     }
